@@ -28,7 +28,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="product-card-body">
           <p className="category">{product.category}</p>
           <h3>{product.name}</h3>
-          <p>{product.short_description || product.description.substring(0, 100) + '...'}</p>
+          <p style={{ whiteSpace: 'pre-line' }}>
+            {product.short_description || product.description.substring(0, 100) + '...'}
+          </p>
           <p className="price">{formatPrice(product.price)}</p>
         </div>
       </Link>
